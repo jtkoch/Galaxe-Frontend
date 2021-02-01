@@ -1,14 +1,24 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import SearchForm from '../Components/SearchForm'
 
 function Membership() {
     const [data, setData] = useState([])
+    const [searchForm, setSearchForm] = useState([])
+
+    const search = userArr => {
+        setSearchForm(userArr)
+    }
 
     useEffect(() => {
         axios 
             .get("http://localhost:3000/data")
             .then(res => {
                 setData(res.data)
+                setSearchForm(res.data)
+            })
+            .catch(error => 
+                {console.log('error', error)
             })
     }, [])
 
@@ -17,10 +27,8 @@ function Membership() {
             <h1>Search Member</h1>
 
             <div className="search">
-                <input type="text" placeholder="Search" />
-                <button>Search</button>
+                <SearchForm search={search} data={data} />
             </div>
-            
             
             <table className="table table-striped table-bordered table-nonfluid">
                 <thead  className="thead-dark">
@@ -33,7 +41,7 @@ function Membership() {
                 </thead>
                 <tbody>
                     {
-                        data.map((user) => (
+                        searchForm.map((user) => (
                             <tr key={user.id}>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
