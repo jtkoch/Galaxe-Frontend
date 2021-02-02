@@ -30,7 +30,7 @@ function Membership() {
                 <SearchForm search={search} data={data} />
             </div>
             
-            <table className="table table-striped table-bordered table-nonfluid">
+            <table className="table table-striped table-nonfluid">
                 <thead  className="thead-dark">
                     <tr>
                         <th scope="col">First Name</th>
@@ -40,7 +40,7 @@ function Membership() {
                     </tr>
                 </thead>
                 <tbody>
-                    {searchForm.length === 0 ? (alert("Sorry, no results found!"))
+                    {searchForm.length === 0 ? (<h1 className="error">Sorry, no results found!</h1>)
                         : searchForm.map((user) => (
                             <tr key={user.id}>
                                 <td>{user.firstName}</td>
