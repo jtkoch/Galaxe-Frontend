@@ -6,14 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+# RUN THE .JSON FILE BEFORE RUNNING THE APP. 
+this is because we are using port 3000 for the axios api call and the application
+can just run on port http://localhost:3001
+
+### `To run the members data file`
+cd into frontend and type "json-server --watch src/members.json" in the terminal
+
+### `To run the drugs data file`
+cd into frontend and type "json-server --watch src/drugs.json" in the terminal
+
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-
-### `To run the mock data file`
-cd into frontend and type "json-server --watch src/db.json" in the terminal
+cd into frontend and type npm start
