@@ -16,5 +16,7 @@ cd into frontend and type "json-server --watch src/members.json" in the terminal
 ### `To run the drugs data file`
 cd into frontend and type "json-server --watch src/drugs.json" in the terminal
 
+<<<<<<< HEAD
 ### `npm start`
 cd into frontend and type npm start
+=======
