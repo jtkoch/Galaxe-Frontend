@@ -15,5 +15,5 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 
-### `To run the mock data file`
-cd into frontend and type "json-server --watch src/db.json" in the terminal
+### `To run the members data file`
+cd into frontend and type "json-server --watch src/members.json" in the terminal
