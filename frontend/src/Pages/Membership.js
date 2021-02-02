@@ -40,8 +40,8 @@ function Membership() {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        searchForm.map((user) => (
+                    {searchForm.length === 0 ? (alert("Sorry, no results found!"))
+                        : searchForm.map((user) => (
                             <tr key={user.id}>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
