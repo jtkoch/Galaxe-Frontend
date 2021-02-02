@@ -9,7 +9,7 @@
         "id": 1
       },
       {
-        "package_ndc": "74438-020",
+        "product_ndc": "74438-020",
         "drug_name": "TLCUO LEMON",
         "strength": ".26 g/100mL",
         "npi": "Peroxy acetic acid",
@@ -17,7 +17,7 @@
         "id": 2
       },
       {
-        "package_ndc": "0409-4279",
+        "product_ndc": "0409-4279",
         "drug_name": "Lidocaine Hydrochloride",
         "strength": "10 mg/mL",
         "npi": "Lidocaine Hydrochloride",
@@ -33,15 +33,15 @@
         "id": 4
       },
       {
-        "package_ndc": "74376-001-01",
-        "drug_name": "",
-        "strength": "",
-        "npi": "",
-        "dosage": "",
+        "product_ndc": "74376-001-01",
+        "drug_name": "Sodium hypochlorite",
+        "strength": ".02 g/100mL",
+        "npi": "Disinfectant Spray",
+        "dosage": "Liquid",
         "id": 5
       },
       {
-        "package_ndc": "74247-0014",
+        "product_ndc": "74247-0014",
         "drug_name": "Sodium hypochlorite",
         "strength": ".02 g/100mL",
         "npi": "Disinfectant Spray",

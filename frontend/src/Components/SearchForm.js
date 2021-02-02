@@ -34,7 +34,7 @@ const SearchForm = (props) => {
             <Form onSubmit={submitHandler}>
                 <Form.Control 
                     onChange={handleChange}
-                    type="text"
+                    type="search"
                     name="search"
                     id="user"
                     placeholder="Search"
