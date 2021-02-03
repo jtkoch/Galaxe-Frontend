@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Styles/Drug.scss";
 import SearchDrug from "../Components/SearchDrug";
+import Button from 'react-bootstrap/Button';
 
 function Drug() {
   const [drugs, setDrugs] = useState([]);
-
   const [searchDrug, setSearchDrug] = useState([]);
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   const search = (userArr) => {
     setSearchDrug(userArr);
@@ -24,6 +28,19 @@ function Drug() {
       });
   }, []);
 
+    const handleDelete = (id) => {
+
+      axios
+        .delete(`http://localhost:3000/drugs/${id}`)
+        .then(res => {        
+          console.log(res.data)
+
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
   return (
     <div className="drug">
       <h1>Search Drug</h1>
@@ -40,10 +57,12 @@ function Drug() {
             <th scope="col">Strength</th>
             <th scope="col">Non-Proprietary Name</th>
             <th scope="col">Dosage Form</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Edit</th>
           </tr>
         </thead>
         <tbody>
-            {searchDrug.length === 0 ? (<h1 className="error">Sorry, no results found!</h1>)
+            {searchDrug.length === 0 ? (<tr><td className="error">Sorry, no results found!</td></tr>)
                 : searchDrug.map((drug) => (
                 <tr key={drug.id}>
                     <td>{drug.product_ndc}</td>
@@ -51,6 +70,8 @@ function Drug() {
                     <td>{drug.strength}</td>
                     <td>{drug.npi}</td>
                     <td>{drug.dosage}</td>
+                    <td><Button onClick={() => {handleDelete(drug.id); refreshPage();}}>Delete</Button></td>
+                    <td><Button variant="secondary">Edit</Button></td>
                 </tr>
             ))
           }
