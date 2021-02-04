@@ -39,7 +39,7 @@ const SearchDrug = (props) => {
       <Form onSubmit={submitHandler}>
         <Form.Control
           onChange={handleChange}
-          type="text"
+          type="number"
           name="search"
           id="user"
           placeholder="search drug by NDC"
