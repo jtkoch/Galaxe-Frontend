@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import SearchForm from '../Components/SearchForm'
+import '../Styles/Membership.scss'
 
 function Membership() {
     const [data, setData] = useState([])
