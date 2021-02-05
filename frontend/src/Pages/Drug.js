@@ -3,12 +3,17 @@ import axios from "axios";
 import "../Styles/Drug.scss";
 import SearchDrug from "../Components/SearchDrug";
 import Button from "react-bootstrap/Button";
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
+import EditDrug from "./EditDrug";
+
 
 function Drug() {
   const [drugs, setDrugs] = useState([]);
   const [searchDrug, setSearchDrug] = useState([]);
   const history = useHistory();
+
+  // Redirect <EditDrug />;
 
   function refreshPage() {
     window.location.reload(false);
@@ -31,9 +36,19 @@ function Drug() {
   }, []);
 
   const handleEdit = (drug) => {
+    localStorage.setItem("drug", drug);
+    console.log(localStorage.getItem(drug.id));
     let path = "/EditDrug";
     history.push(drug);
     history.push(path);
+    
+    EditDrug ={ 
+      drugName: PropTypes.string.isRequired
+    };
+  
+    EditDrug.defaultProps = {
+      drugName: drug.drugName
+    };
   };
 
   const handleDelete = (id) => {
@@ -96,7 +111,7 @@ function Drug() {
                     onClick={() => {
                       handleEdit(drug);
                       drug = { drug };
-                      console.log(drug);
+                      console.log(localStorage.getItem(drug));
                     }}
                   >
                     Edit

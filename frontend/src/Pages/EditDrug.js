@@ -7,8 +7,10 @@ import { useHistory } from "react-router-dom";
 const EditDrug = (props) => {
   const history = useHistory();
 
+  const drig = window.localStorage.getItem('drug');
+
   const [form, setForm] = useState({
-    drugName: "",
+    drugName: props.drugName,
     nationalDrugCode: "",
     drugStrength: "",
     genericCodeNum: "",
@@ -29,7 +31,7 @@ const EditDrug = (props) => {
     event.preventDefault();
     console.log("submitted", form);
     axios
-      .put("http://localhost:8081/update/3", form)
+      .put("http://localhost:8081/update/`{drig.id}`", form)
       .then((response) => {
         console.log(response);
         localStorage.setItem("token", response.data.token);
@@ -49,7 +51,7 @@ const EditDrug = (props) => {
           <Form.Control
             type="text"
             name="drugName"
-            placeholder="Enter Drug Name"
+            placeholder={drig.drugName}
             value={form.drugName}
             onChange={handleChange}
           />
