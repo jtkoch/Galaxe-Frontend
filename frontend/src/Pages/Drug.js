@@ -7,7 +7,6 @@ import { Redirect, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import EditDrug from "./EditDrug";
 
-
 function Drug() {
   const [drugs, setDrugs] = useState([]);
   const [searchDrug, setSearchDrug] = useState([]);
@@ -25,7 +24,7 @@ function Drug() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/drugs")
+      .get("http://localhost:8080/drugs")
       .then((res) => {
         setDrugs(res.data);
         setSearchDrug(res.data);
@@ -41,13 +40,13 @@ function Drug() {
     let path = "/EditDrug";
     history.push(drug);
     history.push(path);
-    
-    EditDrug ={ 
-      drugName: PropTypes.string.isRequired
+
+    EditDrug = {
+      drugName: PropTypes.string.isRequired,
     };
-  
+
     EditDrug.defaultProps = {
-      drugName: drug.drugName
+      drugName: drug.drugName,
     };
   };
 
