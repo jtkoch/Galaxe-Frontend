@@ -1,18 +1,14 @@
 .drug {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    .search {
-      margin: 1%;
-      width: 15%;
-    }
-  
-    .table {
-      width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-      .error {
-        color: red;
-      }
-    }
+  .search {
+    margin: 1%;
+    width: 15%;
   }
+
+  .table {
+    width: 60%;
+  }
+}
