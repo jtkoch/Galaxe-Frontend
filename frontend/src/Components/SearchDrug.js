@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useHistory } from 'react-router-dom';
 
 const SearchDrug = (props) => {
   const [results, setResults] = useState();
+  const history = useHistory();
 
   function refreshPage() {
     window.location.reload(false);
@@ -13,12 +15,17 @@ const SearchDrug = (props) => {
     setResults(event.target.value);
   };
 
+  const routeChange = () => {
+    let path="/AddDrug";
+    history.push(path);
+  }
+
   const submitHandler = (event) => {
     event.preventDefault();
 
     const drugSearch = props.data.filter((drug) => {
       return (
-        drug.product_ndc.toLowerCase().indexOf(results.toLowerCase()) !== -1
+        drug.nationalDrugCode.toLowerCase().indexOf(results.toLowerCase()) !== -1
       );
     });
 
@@ -42,6 +49,9 @@ const SearchDrug = (props) => {
         </Button>
         <Button onClick={refreshPage} variant="secondary" className="m-3">
           Reset List
+        </Button>
+        <Button variant="secondary" className="ml-5 mr-5" onClick={routeChange}>
+          Add Drug
         </Button>
       </Form>
     </div>
