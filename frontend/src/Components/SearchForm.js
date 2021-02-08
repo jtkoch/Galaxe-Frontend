@@ -43,7 +43,6 @@ const SearchForm = (props) => {
                 <Button type="submit" className="m-3">Search</Button>
                 <Button onClick={refreshPage} variant="secondary" className="m-3">Reset List</Button>
             </Form>
-            
         </div>
     )
 }
