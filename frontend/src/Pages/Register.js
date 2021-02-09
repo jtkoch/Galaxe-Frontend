@@ -10,11 +10,11 @@ const Register = () => {
     const [form, setForm] = useState({
         firstName: "",
         lastName: "",
-        dob: "",
-        memberID: "",
-        address: "",
-        username: "",
-        password: ""
+        DOB: "",
+        address_1: "",
+        address_2: "",
+        city: "",
+        state: ""
     })
 
     const handleChange = (event) => {
@@ -30,7 +30,7 @@ const Register = () => {
         event.preventDefault()
         console.log("submitted", form)
         axios
-            .post("http://localhost:3000/data", form)
+            .post("http://localhost:9000/members", form)
             .then(response => {
                 console.log(response)
                 localStorage.setItem('token', response.data.token)
@@ -70,50 +70,50 @@ const Register = () => {
                 <Form.Group controlId="Dob">
                     <Form.Label>dob</Form.Label>
                     <Form.Control 
-                        type="date" 
+                        type="text" 
                         name="dob" 
                         placeholder="Enter dob" 
                         value={form.dob} 
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="MemberID">
-                    <Form.Label>Member ID</Form.Label>
-                    <Form.Control 
-                        type="number" 
-                        name="memberID" 
-                        placeholder="Enter Member ID" 
-                        value={form.memberID} 
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group controlId="Address">
-                    <Form.Label>Address</Form.Label>
+                <Form.Group controlId="Address_1">
+                    <Form.Label>Address 1</Form.Label>
                     <Form.Control 
                         type="text" 
-                        name="address" 
+                        name="address_1" 
                         placeholder="Enter Address" 
-                        value={form.address} 
+                        value={form.address_1} 
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="Username">
-                    <Form.Label>Username</Form.Label>
+                <Form.Group controlId="Address_2">
+                    <Form.Label>Address 2</Form.Label>
                     <Form.Control 
                         type="text" 
-                        name="username" 
-                        placeholder="Enter username" 
-                        value={form.username} 
+                        name="address_2" 
+                        placeholder="Enter Address" 
+                        value={form.address_2} 
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="Password">
-                    <Form.Label>Password</Form.Label>
+                <Form.Group controlId="City">
+                    <Form.Label>City</Form.Label>
                     <Form.Control 
-                        type="password" 
-                        name="password" 
-                        placeholder="Password" 
-                        value={form.password} 
+                        type="text" 
+                        name="city" 
+                        placeholder="Enter city" 
+                        value={form.city} 
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="State">
+                    <Form.Label>State</Form.Label>
+                    <Form.Control 
+                        type="state" 
+                        name="state" 
+                        placeholder="State" 
+                        value={form.state} 
                         onChange={handleChange}
                     />
                 </Form.Group>

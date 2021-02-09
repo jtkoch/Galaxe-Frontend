@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom"
 
 const SearchDrug = (props) => {
   const history = useHistory()
-  const [results, setResults] = useState();
+  const [results, setResults] = useState([]);
 
   const routeChange = () => {
     let path = "/AddDrug";
@@ -25,7 +25,7 @@ const SearchDrug = (props) => {
 
     const drugSearch = props.data.filter((drug) => {
       return (
-        drug.nationalDrugCode.indexOf(results) !== -1
+        drug.nationalDrugCode.toString().indexOf(results) !== -1
       );
     });
 

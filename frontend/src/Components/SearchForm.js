@@ -1,8 +1,10 @@
 import React, {useState} from "react"
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { useHistory } from 'react-router-dom';
 
 const SearchForm = (props) => {
+    const history = useHistory()
     const [results, setResults] = useState()
 
     function refreshPage() {
@@ -13,15 +15,18 @@ const SearchForm = (props) => {
         setResults(event.target.value)
     }
 
+    const routeChange = () => {
+        let path="/AddMembership";
+        history.push(path);
+      }
+
     const submitHandler = event => {
         event.preventDefault();
 
         const userSearch = props.data.filter(user => {
             return (
                 user.firstName.toLowerCase().indexOf(results.toLowerCase()) !== -1 ||
-                user.lastName.toLowerCase().indexOf(results.toLowerCase()) !== -1 || 
-                user.memberID.toLowerCase().indexOf(results.toLowerCase()) !== -1 || 
-                user.address.toLowerCase().indexOf(results.toLowerCase()) !== -1
+                user.lastName.toLowerCase().indexOf(results.toLowerCase()) !== -1
             )
         })
 
@@ -42,8 +47,8 @@ const SearchForm = (props) => {
                 
                 <Button type="submit" className="m-3">Search</Button>
                 <Button onClick={refreshPage} variant="secondary" className="m-3">Reset List</Button>
+                <Button variant="primary" className="ml-5 mr-5" onClick={routeChange}>Add Member</Button>
             </Form>
-            
         </div>
     )
 }

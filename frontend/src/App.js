@@ -10,6 +10,8 @@ import Membership from './Pages/Membership'
 import Pharmacy from './Pages/Pharmacy'
 import AddDrug from './Pages/AddDrug'
 import EditDrug from './Pages/EditDrug'
+import AddMembership from './Pages/AddMembership'
+import EditMembership from './Pages/EditMembership'
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
         <Route path="/Pharmacy" component={Pharmacy}/>
         <Route path="/AddDrug" component={AddDrug}/>
         <Route path="/EditDrug/:id" component={EditDrug}/>
+        <Route path="/AddMembership" component={AddMembership} />
+        <Route path="/EditMembership" component={EditMembership} />
     </div>
   );
 }

@@ -14,15 +14,15 @@ function Drug() {
     window.location.reload(false)
   }
 
-  const search = (userArr) => {
-    setSearchDrug(userArr)
+  const search = (drugArr) => {
+    setSearchDrug(drugArr)
   }
 
   useEffect(() => {
     axios
       .get("http://localhost:9000/drugs")
       .then((res) => {
-        setDrugs(res.data)
+        setDrugs([...res.data])
         setSearchDrug(res.data)
       })
       .catch((error) => {
