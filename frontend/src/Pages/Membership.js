@@ -17,7 +17,7 @@ function Membership() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8083/member/search")
+      .get("http://localhost:8081/member/search")
       .then((res) => {
         setData(res.data);
         setSearchForm(res.data);
@@ -40,7 +40,7 @@ function Membership() {
 
   return (
     <div className="membership">
-      <h1>Search Member</h1>
+      <h1>Members</h1>
 
       <div className="search">
         <SearchForm search={search} data={data} />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
@@ -6,17 +6,27 @@ import { useHistory } from "react-router-dom";
 
 const EditDrug = (props) => {
   const history = useHistory();
-
-  const drig = window.localStorage.getItem('drug');
-
   const [form, setForm] = useState({
-    drugName: props.drugName,
+    drugName: "",
     nationalDrugCode: "",
     drugStrength: "",
     genericCodeNum: "",
     unitOfMeasurement: "",
     dosage: "",
   });
+
+  useEffect(() => {
+    let drugId = props.match.params.id;
+
+    axios
+      .get(`http://localhost:8080/drug/${drugId}`)
+      .then((res) => {
+        setForm(res.data);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }, [props.match.params.id]);
 
   const handleChange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -31,10 +41,9 @@ const EditDrug = (props) => {
     event.preventDefault();
     console.log("submitted", form);
     axios
-      .put("http://localhost:8081/update/`{drig.id}`", form)
+      .put(`http://localhost:8080/update/${form.id}`, form)
       .then((response) => {
         console.log(response);
-        localStorage.setItem("token", response.data.token);
         setForm(response.data);
         history.push("/Drug");
       })
@@ -51,7 +60,7 @@ const EditDrug = (props) => {
           <Form.Control
             type="text"
             name="drugName"
-            placeholder={drig.drugName}
+            placeholder="drug name"
             value={form.drugName}
             onChange={handleChange}
           />
@@ -79,7 +88,7 @@ const EditDrug = (props) => {
         <Form.Group controlId="genericCodeNum">
           <Form.Label>Generic CodeNum</Form.Label>
           <Form.Control
-            type="number"
+            type="text"
             name="genericCodeNum"
             placeholder="Enter Generic CodeNum"
             value={form.genericCodeNum}

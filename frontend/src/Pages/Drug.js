@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../Styles/Drug.scss";
-import SearchDrug from "../Components/SearchDrug";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
-import { Redirect, useHistory } from "react-router-dom";
-import PropTypes from "prop-types";
-import EditDrug from "./EditDrug";
+import { useHistory } from "react-router-dom";
+import SearchDrug from "../Components/SearchDrug";
+import "../Styles/Drug.scss";
 
 function Drug() {
   const [drugs, setDrugs] = useState([]);
   const [searchDrug, setSearchDrug] = useState([]);
   const history = useHistory();
-
-  // Redirect <EditDrug />;
 
   function refreshPage() {
     window.location.reload(false);
@@ -34,20 +30,9 @@ function Drug() {
       });
   }, []);
 
-  const handleEdit = (drug) => {
-    localStorage.setItem("drug", drug);
-    console.log(localStorage.getItem(drug.id));
-    let path = "/EditDrug";
-    history.push(drug);
+  const handleEdit = (id) => {
+    let path = `/EditDrug/${id}`;
     history.push(path);
-
-    EditDrug = {
-      drugName: PropTypes.string.isRequired,
-    };
-
-    EditDrug.defaultProps = {
-      drugName: drug.drugName,
-    };
   };
 
   const handleDelete = (id) => {
@@ -63,7 +48,7 @@ function Drug() {
 
   return (
     <div className="drug">
-      <h1>DRUGS</h1>
+      <h1>Drugs</h1>
 
       <div className="search">
         <SearchDrug search={search} data={drugs} />
@@ -106,12 +91,10 @@ function Drug() {
                 </td>
                 <td>
                   <Button
-                    variant="secondary"
                     onClick={() => {
-                      handleEdit(drug);
-                      drug = { drug };
-                      console.log(localStorage.getItem(drug));
+                      handleEdit(drug.id);
                     }}
+                    variant="secondary"
                   >
                     Edit
                   </Button>
