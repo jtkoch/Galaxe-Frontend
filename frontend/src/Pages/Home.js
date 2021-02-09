@@ -5,6 +5,7 @@ function Home(props) {
         <div>
             <h1>Home</h1>
             <p>Welcome, {props.firstName}</p>
+            {console.log(props.firstName)}
         </div>
     )
 }

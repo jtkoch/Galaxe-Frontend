@@ -30,9 +30,8 @@ function Drug() {
       });
   }, []);
 
-    const handleEdit = (drug) => {
-      let path="/EditDrug";
-      history.push(drug);
+    const handleEdit = (id) => {
+      let path=`/EditDrug/${id}`;
       history.push(path);
     }
 
@@ -78,7 +77,7 @@ function Drug() {
                     <td>{drug.unitOfMeasurement}</td>
                     <td>{drug.dosage}</td>
                     <td><Button onClick={() => {handleDelete(drug.id); refreshPage();}}>Delete</Button></td>
-                    <td><Button variant="secondary" onClick={() => {handleEdit(drug); drug={drug}; console.log(drug)}}>Edit</Button></td>
+                    <td><Button variant="secondary" onClick={() => {handleEdit(drug.id); console.log(drug)}}>Edit</Button></td>
                 </tr>
             ))
           }

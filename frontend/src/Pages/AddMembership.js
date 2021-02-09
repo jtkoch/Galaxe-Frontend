@@ -10,8 +10,11 @@ const AddMembership = () => {
     const [memberForm, setMemberForm] = useState({
         firstName: '',
         lastName: '',
-        memberId: '',
-        address: ''
+        dob: '',
+        address_1: '',
+        address_2: '',
+        city: '',
+        state: ''
     });
 
     const handleChange = (event) => {
@@ -27,7 +30,7 @@ const AddMembership = () => {
         event.preventDefault();
         console.log("Submitted", memberForm);
         axios
-            .post("", memberForm)
+            .post("http://localhost:9000/members", memberForm)
             .then((response) => {
                 console.log(response);
                 localStorage.setItem("token", response.data.token);
@@ -63,23 +66,53 @@ const AddMembership = () => {
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="memberId">
-                    <Form.Label>Member ID</Form.Label>
+                <Form.Group controlId="dob">
+                    <Form.Label>Date of Birth</Form.Label>
                     <Form.Control
-                        type="number"
-                        name="memberId"
-                        placeholder="Enter Member ID"
-                        value={memberForm.memberId}
+                        type="text"
+                        name="dob"
+                        placeholder="Enter Date of Birth"
+                        value={memberForm.dob}
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="address">
-                    <Form.Label>Address</Form.Label>
+                <Form.Group controlId="address_1">
+                    <Form.Label>Address 1</Form.Label>
                     <Form.Control
                         type="text"
-                        name="address"
-                        placeholder="Enter Address"
-                        value={memberForm.address}
+                        name="address_1"
+                        placeholder="Enter Address 1"
+                        value={memberForm.address_1}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="address_2">
+                    <Form.Label>Address 2</Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="address_2"
+                        placeholder="Enter Address 2"
+                        value={memberForm.address_2}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="city">
+                    <Form.Label>City</Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="city"
+                        placeholder="Enter City"
+                        value={memberForm.city}
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="state">
+                    <Form.Label>State</Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="state"
+                        placeholder="Enter State"
+                        value={memberForm.state}
                         onChange={handleChange}
                     />
                 </Form.Group>

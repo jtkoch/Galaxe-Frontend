@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import { useHistory } from 'react-router-dom';
 
 const SearchDrug = (props) => {
+  const history = useHistory()
   const [results, setResults] = useState();
-  const history = useHistory();
 
   function refreshPage() {
     window.location.reload(false);
@@ -24,9 +24,7 @@ const SearchDrug = (props) => {
     event.preventDefault();
 
     const drugSearch = props.data.filter((drug) => {
-      return (
-        drug.nationalDrugCode.toLowerCase().indexOf(results.toLowerCase()) !== -1
-      );
+      return drug.nationalDrugCode.toString().indexOf(results) !== -1;
     });
 
     props.search(drugSearch);
@@ -38,7 +36,7 @@ const SearchDrug = (props) => {
       <Form onSubmit={submitHandler}>
         <Form.Control
           onChange={handleChange}
-          type="number"
+          type="text"
           name="search"
           id="user"
           placeholder="Search by NDC"
@@ -56,6 +54,6 @@ const SearchDrug = (props) => {
       </Form>
     </div>
   );
-};
+}
 
 export default SearchDrug;

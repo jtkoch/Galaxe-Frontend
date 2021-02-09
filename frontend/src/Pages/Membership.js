@@ -20,7 +20,7 @@ function Membership() {
 
     useEffect(() => {
         axios 
-            .get("")
+            .get("http://localhost:9000/members")
             .then(res => {
                 setMember(res.data)
                 setSearchForm(res.data)
@@ -37,7 +37,7 @@ function Membership() {
 
     const handleDelete = (id) => {
         axios
-          .delete()
+          .delete(`http://localhost:3000/data/${id}`)
           .then(res => {        
             console.log(res.data)
           })
@@ -59,8 +59,11 @@ function Membership() {
                     <tr>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
-                        <th scope="col">Member ID</th>
-                        <th scope="col">Address</th>
+                        <th scope="col">Date of Birth</th>
+                        <th scope="col">Address 1</th>
+                        <th scope="col">Address 2</th>
+                        <th scope="col">City</th>
+                        <th scope="col">State</th>
                         <th scope="col">Delete</th>
                         <th scope="col">Edit</th>
                     </tr>
@@ -71,8 +74,11 @@ function Membership() {
                             <tr key={user.id}>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
-                                <td>{user.memberID}</td>
-                                <td>{user.address}</td>
+                                <td>{user.dob}</td>
+                                <td>{user.address_1}</td>
+                                <td>{user.address_2}</td>
+                                <td>{user.city}</td>
+                                <td>{user.state}</td>
                                 <td><Button onClick={() => {handleDelete(user.id); refreshPage();}}>Delete</Button></td>
                                 <td><Button variant="secondary" onClick={() => {handleEdit(user.id)}}>Edit</Button></td>
                             </tr>
