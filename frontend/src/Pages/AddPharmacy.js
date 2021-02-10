@@ -4,15 +4,17 @@ import Button from "react-bootstrap/Button"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 
-const AddDrug = () => {
+const AddPharmacy = () => {
     const history = useHistory()
     const [form, setForm] = useState({
-        drugName: "",
-        nationalDrugCode: "",
-        drugStrength: "",
-        genericCodeNum: "",
-        unitOfMeasurement: "",
-        dosage: "",
+        name: "",
+        address: "",
+        city: "",
+        state: "",
+        country: "",
+        zipCode: "",
+        npi: "",
+        actions: ""
     })
 
     const handleChange = (event) => {
@@ -20,7 +22,7 @@ const AddDrug = () => {
     }
 
     const routeChange = () => {
-        let path = "/Drug";
+        let path = "/Pharmacy";
         history.push(path);
     }
 
@@ -28,12 +30,11 @@ const AddDrug = () => {
         e.preventDefault()
         console.log("submitted", form)
         axios
-            .post("http://localhost:9000/adddrug", form)
+            .post("http://localhost:9000/addPharmacy", form)
             .then(response => {
                 console.log(response)
-                localStorage.setItem("token", response.data.token);
                 setForm(response.data)
-                history.push("Drug")
+                history.push("Pharmacy")
             })
             .catch(error => {
                 console.log("There has been an error", error)
@@ -43,68 +44,78 @@ const AddDrug = () => {
     return (
         <div className="register-container">
         <Form onSubmit={handleSubmit} className="p-5">
-          <Form.Group controlId="drugName">
-            <Form.Label>Drug Name</Form.Label>
+          <Form.Group controlId="name">
+            <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"
-              name="drugName"
-              placeholder="Enter Drug Name"
-              value={form.drugName}
+              name="name"
+              placeholder="Enter Name"
+              value={form.name}
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group controlId="nationalDrugCode">
-            <Form.Label>National Drug Code</Form.Label>
-            <Form.Control
-              type="number"
-              name="nationalDrugCode"
-              placeholder="Enter National Drug Code"
-              value={form.nationalDrugCode}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="drugStrength">
-            <Form.Label>Drug Strength</Form.Label>
+          <Form.Group controlId="address">
+            <Form.Label>Address</Form.Label>
             <Form.Control
               type="text"
-              name="drugStrength"
-              placeholder="Enter Drug Strength"
-              value={form.drugStrength}
+              name="address"
+              placeholder="Enter Address"
+              value={form.address}
               onChange={handleChange}
             />
           </Form.Group>
-          <Form.Group controlId="genericCodeNum">
-            <Form.Label>Generic Code Number</Form.Label>
-            <Form.Control
-              type="number"
-              name="genericCodeNum"
-              placeholder="Enter Generic CodeNum"
-              value={form.genericCodeNum}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="unitOfMeasurement">
-            <Form.Label>Unit Of Measurement</Form.Label>
-            <Form.Control
-              type="number"
-              name="unitOfMeasurement"
-              placeholder="Enter Unit Of Measurement"
-              value={form.unitOfMeasurement}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="dosage">
-            <Form.Label>Dosage</Form.Label>
+          <Form.Group controlId="city">
+            <Form.Label>City</Form.Label>
             <Form.Control
               type="text"
-              name="dosage"
-              placeholder="Enter Dosage"
-              value={form.dosage}
+              name="city"
+              placeholder="Enter City"
+              value={form.city}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="state">
+            <Form.Label>State</Form.Label>
+            <Form.Control
+              type="text"
+              name="state"
+              placeholder="Enter State"
+              value={form.state}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="country">
+            <Form.Label>Country</Form.Label>
+            <Form.Control
+              type="text"
+              name="country"
+              placeholder="Enter Country"
+              value={form.country}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="zipcode">
+            <Form.Label>Zipcode</Form.Label>
+            <Form.Control
+              type="number"
+              name="zipCode"
+              placeholder="Enter Zipcode"
+              value={form.zipCode}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="npi">
+            <Form.Label>NPI</Form.Label>
+            <Form.Control
+              type="number"
+              name="npi"
+              placeholder="Enter NPI"
+              value={form.npi}
               onChange={handleChange}
             />
           </Form.Group>
           <Button variant="primary" className="ml-5 mr-5" type="submit">
-            Add Drug
+            Add Pharmacy
           </Button>
           <Button variant="secondary" className="ml-5 mr-5" onClick={routeChange}>
             Cancel
@@ -114,4 +125,4 @@ const AddDrug = () => {
     )
 }
 
-export default AddDrug
+export default AddPharmacy

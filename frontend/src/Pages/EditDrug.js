@@ -68,7 +68,7 @@ const EditDrug = (props) => {
         <Form.Group controlId="nationalDrugCode">
           <Form.Label>National Drug Code</Form.Label>
           <Form.Control
-            type="text"
+            type="number"
             name="nationalDrugCode"
             placeholder="Enter National Drug Code"
             value={form.nationalDrugCode}
@@ -86,9 +86,9 @@ const EditDrug = (props) => {
           />
         </Form.Group>
         <Form.Group controlId="genericCodeNum">
-          <Form.Label>Generic CodeNum</Form.Label>
+          <Form.Label>Generic Code Number</Form.Label>
           <Form.Control
-            type="text"
+            type="number"
             name="genericCodeNum"
             placeholder="Enter Generic CodeNum"
             value={form.genericCodeNum}
@@ -98,7 +98,7 @@ const EditDrug = (props) => {
         <Form.Group controlId="unitOfMeasurement">
           <Form.Label>Unit Of Measurement</Form.Label>
           <Form.Control
-            type="text"
+            type="number"
             name="unitOfMeasurement"
             placeholder="Enter Unit Of Measurement"
             value={form.unitOfMeasurement}
