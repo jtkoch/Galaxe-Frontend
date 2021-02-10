@@ -25,7 +25,7 @@ const SearchPharmacy = (props) => {
 
     const pharmacySearch = props.data.filter((pharmacy) => {
       return (
-        pharmacy.zipcode.toString().indexOf(results) !== -1
+        pharmacy.zipCode.toString().indexOf(results) !== -1
       );
     });
 
