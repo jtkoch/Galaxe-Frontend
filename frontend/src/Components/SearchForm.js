@@ -18,8 +18,8 @@ const SearchForm = (props) => {
 
         const userSearch = props.data.filter(user => {
             return (
-                user.firstName.toLowerCase().indexOf(results.toLowerCase()) !== -1 ||
-                user.lastName.toLowerCase().indexOf(results.toLowerCase()) !== -1
+                user.first_name && user.first_name.toLowerCase().indexOf(results.toLowerCase()) !== -1 ||
+                user.last_name && user.last_name.toLowerCase().indexOf(results.toLowerCase()) !== -1
             )
         })
 

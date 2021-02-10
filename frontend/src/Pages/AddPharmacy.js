@@ -14,7 +14,8 @@ const AddPharmacy = () => {
         country: "",
         zipCode: "",
         npi: "",
-        actions: ""
+        latitude: "",
+        longitude: "" 
     })
 
     const handleChange = (event) => {
@@ -111,6 +112,26 @@ const AddPharmacy = () => {
               name="npi"
               placeholder="Enter NPI"
               value={form.npi}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="latitude">
+            <Form.Label>Latitude</Form.Label>
+            <Form.Control
+              type="text"
+              name="latitude"
+              placeholder="Enter Latitude"
+              value={form.latitude}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="longitude">
+            <Form.Label>Longitude</Form.Label>
+            <Form.Control
+              type="text"
+              name="longitude"
+              placeholder="Enter Longitude"
+              value={form.longitude}
               onChange={handleChange}
             />
           </Form.Group>

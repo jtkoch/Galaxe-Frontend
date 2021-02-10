@@ -8,13 +8,15 @@ const Register = () => {
     const history = useHistory();
 
     const [form, setForm] = useState({
-        firstName: "",
-        lastName: "",
+        first_name: "",
+        last_name: "",
         DOB: "",
         address_1: "",
         address_2: "",
         city: "",
-        state: ""
+        state: "", 
+        username: "",
+        password: ""
     })
 
     const handleChange = (event) => {
@@ -33,7 +35,6 @@ const Register = () => {
             .post("http://localhost:9000/members", form)
             .then(response => {
                 console.log(response)
-                localStorage.setItem('token', response.data.token)
                 setForm(response.data)
                 history.push('/Login')
             })
@@ -47,23 +48,23 @@ const Register = () => {
     return (
         <div className="register-container">
             <Form onSubmit={handleSubmit} className="p-5">
-                <Form.Group controlId="FirstName">
+                <Form.Group controlId="first_name">
                     <Form.Label>First Name</Form.Label>
                     <Form.Control 
                         type="text" 
-                        name="firstName" 
+                        name="first_name" 
                         placeholder="Enter First Name" 
-                        value={form.firstName} 
+                        value={form.first_name} 
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group controlId="LastName">
+                <Form.Group controlId="last_name">
                     <Form.Label>Last Name</Form.Label>
                     <Form.Control 
                         type="text" 
-                        name="lastName" 
+                        name="last_name" 
                         placeholder="Enter Last Name" 
-                        value={form.lastName}
+                        value={form.last_name}
                         onChange={handleChange}
                     />
                 </Form.Group>
@@ -110,10 +111,30 @@ const Register = () => {
                 <Form.Group controlId="State">
                     <Form.Label>State</Form.Label>
                     <Form.Control 
-                        type="state" 
+                        type="text" 
                         name="state" 
                         placeholder="State" 
                         value={form.state} 
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="username">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control 
+                        type="text" 
+                        name="username" 
+                        placeholder="Username" 
+                        value={form.username} 
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control 
+                        type="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        value={form.password} 
                         onChange={handleChange}
                     />
                 </Form.Group>

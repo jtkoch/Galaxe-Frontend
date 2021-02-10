@@ -5,7 +5,7 @@ import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 
 const Login = () => {
-    const history = useHistory();
+    const history = useHistory()
 
     const [user, setUser] = useState({
         username: "",
@@ -25,10 +25,9 @@ const Login = () => {
         event.preventDefault()
         console.log("submitted", user)
         axios
-            .post("http://localhost:3000/data", user)
+            .post("http://localhost:9000/members", user)
             .then(response => {
                 console.log(response)
-                localStorage.setItem('token', response.data.token)
                 setUser(response.data)
                 history.push('/Home')
             })
@@ -38,16 +37,15 @@ const Login = () => {
     }
 
     
-
     return (
         <div className="login-container">
             <Form onSubmit={handleSubmit} className="p-5">
                 <Form.Group size="lg" controlId="username">
                     <Form.Label>Username:</Form.Label>
                     <Form.Control 
-                        type="username" 
+                        type="text" 
                         name="username"
-                        placeholder="Enter username" 
+                        placeholder="Enter Username" 
                         value={user.username}
                         onChange={(event) => handleChange(event)}
                     />

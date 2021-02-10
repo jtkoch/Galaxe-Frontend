@@ -4,7 +4,7 @@ function Home(props) {
     return (
         <div>
             <h1>Home</h1>
-            <p>Welcome, {props.firstName}</p>
+            <p>Welcome, {props.first_name}</p>
         </div>
     )
 }

@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button"
 import { useHistory } from "react-router-dom"
 import SearchPharmacy from '../Components/SearchPharmacy'
+import Map from '../Components/Map'
 
 function Pharmacy() {
     const [pharmacy, setPharmacy] = useState([])
@@ -85,6 +86,8 @@ function Pharmacy() {
                     }
                 </tbody>
             </table>
+
+            <Map/>
         </div>
     )
 }

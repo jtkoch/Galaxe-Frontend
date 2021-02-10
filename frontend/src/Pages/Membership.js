@@ -46,8 +46,8 @@ function Membership() {
                     {searchForm.length === 0 ? (<tr><td className="error">Sorry, no members found!</td></tr>)
                         : searchForm.map((user) => (
                             <tr key={user.id}>
-                                <td>{user.firstName}</td>
-                                <td>{user.lastName}</td>
+                                <td>{user.first_name}</td>
+                                <td>{user.last_name}</td>
                                 <td>{user.dob}</td>
                                 <td>{user.address_1}</td>
                                 <td>{user.address_2}</td>
