@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
-import SearchDrug from "../Components/SearchDrug";
+import SearchPharmacy from "../Components/SearchPharmacy";
 import "../Styles/Pharmacy.scss";
 
 function Pharmarcy() {
@@ -31,7 +31,7 @@ function Pharmarcy() {
     }, []);
 
     const handleEdit = (id) => {
-        let path = `/EditDrug/${id}`;
+        let path = `/EditPharmacy/${id}`;
         history.push(path);
     };
 
@@ -51,7 +51,7 @@ function Pharmarcy() {
             <h1>Pharmacies</h1>
 
             <div className="search">
-                <SearchDrug search={search} data={pharmacies} />
+                <SearchPharmacy search={search} data={pharmacies} />
             </div>
 
             <table className="table table-striped table-nonfluid">

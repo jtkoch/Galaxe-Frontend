@@ -11,6 +11,7 @@ import Pharmacy from "./Pages/Pharmacy";
 import AddDrug from "./Pages/AddDrug";
 import EditDrug from "./Pages/EditDrug";
 import AddPharmacy from "./Pages/AddPharmacy";
+import EditPharmacy from "./Pages/EditPharmacy";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <Route path="/AddDrug" component={AddDrug} />
       <Route path="/EditDrug" component={EditDrug} />
       <Route path="/AddPharmacy" component={AddPharmacy} />
+      <Route path="/EditPharmacy" component={EditPharmacy} />
     </div>
   );
 };
