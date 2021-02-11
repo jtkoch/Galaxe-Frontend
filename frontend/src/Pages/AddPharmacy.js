@@ -43,7 +43,8 @@ const AddPharmacy = () => {
     }
 
     return (
-        <div className="register-container">
+        <div className="register-container add-pharmacy">
+          <h1 className="title">Add Pharmacy</h1>
         <Form onSubmit={handleSubmit} className="p-5">
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
@@ -135,10 +136,10 @@ const AddPharmacy = () => {
               onChange={handleChange}
             />
           </Form.Group>
-          <Button variant="primary" className="ml-5 mr-5" type="submit">
+          <Button variant="primary" className="ml-5 mr-5 buttons" type="submit">
             Add Pharmacy
           </Button>
-          <Button variant="secondary" className="ml-5 mr-5" onClick={routeChange}>
+          <Button variant="secondary" className="ml-5 mr-5 buttons" onClick={routeChange}>
             Cancel
           </Button>
         </Form>

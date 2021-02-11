@@ -30,7 +30,7 @@ function Membership() {
                 <SearchForm search={search} data={member} />
             </div>
             
-            <table className="table table-striped table-nonfluid">
+            <table className="table table-striped table-nonfluid set-bg">
                 <thead  className="thead-dark">
                     <tr>
                         <th scope="col">First Name</th>

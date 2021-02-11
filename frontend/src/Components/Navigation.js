@@ -14,8 +14,6 @@ const Navigation = () => {
                     <Link style={{ color: "white" }} className="nav-link ml-3 mr-3" to="/Membership">Membership</Link>
                     <Link style={{ color: "white" }} className="nav-link ml-3 mr-3" to="/Drug">Drug</Link>
                     <Link style={{ color: "white" }} className="nav-link ml-3 mr-3" to="/Pharmacy">Pharmacy</Link>
-
-                    <Link style={{ color: "white" }} className="nav-link ml-3 mr-3 login" to="/Login">Login</Link>
                     <Link style={{ color: "white" }} className="nav-link ml-3 mr-3 register" to="/Register">Sign up</Link>
                 </Nav>
             </Navbar.Collapse>

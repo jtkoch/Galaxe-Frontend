@@ -55,7 +55,7 @@ function Pharmacy() {
                 <SearchPharmacy search={search} data={pharmacy} />
             </div>
             
-            <table className="table table-striped table-nonfluid">
+            <table className="table table-striped table-nonfluid set-bg">
                 <thead  className="thead-dark">
                     <tr>
                         <th scope="col">Name</th>

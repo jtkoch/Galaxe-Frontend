@@ -24,7 +24,7 @@ const Register = () => {
     }
 
     const routeChange = () => {
-        let path = '/Login'
+        let path = '/Home'
         history.push(path)
     }
 
@@ -36,7 +36,7 @@ const Register = () => {
             .then(response => {
                 console.log(response)
                 setForm(response.data)
-                history.push('/Login')
+                history.push('/Home')
             })
             .catch(error => {
                 console.log("There has been an error", error)
@@ -140,10 +140,10 @@ const Register = () => {
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Button variant="primary" className="ml-5 mr-5" type="submit">
+                <Button variant="primary" className="ml-5 mr-5 buttons" type="submit">
                     Register
                 </Button>
-                <Button variant="secondary" className="ml-5 mr-5" onClick={routeChange}>
+                <Button variant="secondary" className="ml-5 mr-5 buttons" onClick={routeChange}>
                     Already Registered?
                 </Button>
             </Form>

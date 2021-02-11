@@ -53,8 +53,9 @@ const EditDrug = (props) => {
   };
 
   return (
-    <div className="register-container">
-      <Form onSubmit={handleSubmit} className="p-5">
+    <div className="register-container edit-drug">
+      <h1 className="title">Edit Drug</h1>
+      <Form onSubmit={handleSubmit} className="p-5 form">
         <Form.Group controlId="drugName">
           <Form.Label>Drug Name</Form.Label>
           <Form.Control
@@ -115,10 +116,10 @@ const EditDrug = (props) => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Button variant="primary" className="ml-5 mr-5" type="submit">
+        <Button variant="primary" className="ml-5 mr-5 buttons" type="submit">
           Submit
         </Button>
-        <Button variant="secondary" className="ml-5 mr-5" onClick={routeChange}>
+        <Button variant="secondary" className="ml-5 mr-5 buttons" onClick={routeChange}>
           Cancel
         </Button>
       </Form>

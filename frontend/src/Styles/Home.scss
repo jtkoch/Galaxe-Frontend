@@ -6,10 +6,20 @@
     background-size: cover;
     font-weight: 600;
 
+    .logout-container {
+        padding: 2%;
+        text-align: right;
+    }
+
     .title {
-        padding-top: 5%;
+        padding-top: 1%;
         color: white;
         text-shadow: 2px 2px black;
+    }
+
+    .login-button {
+        padding: 2%;
+        text-align: right;
     }
 
     .welcome {
@@ -23,5 +33,6 @@
         padding: 15%;
         color: white;
         text-shadow: 2px 1px black;
+        padding-bottom: 40%;
     }
 }
