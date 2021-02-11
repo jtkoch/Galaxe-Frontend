@@ -47,9 +47,11 @@ const Register = () => {
 
     return (
         <div className="register-container">
-            <Form onSubmit={handleSubmit} className="p-5">
+            <h1 className="title">Register</h1>
+
+            <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="first_name">
-                    <Form.Label>First Name</Form.Label>
+                    <Form.Label>First Name:</Form.Label>
                     <Form.Control 
                         type="text" 
                         name="first_name" 
@@ -59,7 +61,7 @@ const Register = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="last_name">
-                    <Form.Label>Last Name</Form.Label>
+                    <Form.Label>Last Name:</Form.Label>
                     <Form.Control 
                         type="text" 
                         name="last_name" 
@@ -69,17 +71,17 @@ const Register = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="Dob">
-                    <Form.Label>dob</Form.Label>
+                    <Form.Label>DOB:</Form.Label>
                     <Form.Control 
                         type="text" 
                         name="dob" 
-                        placeholder="Enter dob" 
+                        placeholder="Enter DOB" 
                         value={form.dob} 
                         onChange={handleChange}
                     />
                 </Form.Group>
                 <Form.Group controlId="Address_1">
-                    <Form.Label>Address 1</Form.Label>
+                    <Form.Label>Address 1:</Form.Label>
                     <Form.Control 
                         type="text" 
                         name="address_1" 
@@ -89,7 +91,7 @@ const Register = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="Address_2">
-                    <Form.Label>Address 2</Form.Label>
+                    <Form.Label>Address 2:</Form.Label>
                     <Form.Control 
                         type="text" 
                         name="address_2" 
@@ -99,7 +101,7 @@ const Register = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="City">
-                    <Form.Label>City</Form.Label>
+                    <Form.Label>City:</Form.Label>
                     <Form.Control 
                         type="text" 
                         name="city" 
@@ -109,7 +111,7 @@ const Register = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="State">
-                    <Form.Label>State</Form.Label>
+                    <Form.Label>State:</Form.Label>
                     <Form.Control 
                         type="text" 
                         name="state" 
@@ -119,7 +121,7 @@ const Register = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="username">
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>Username:</Form.Label>
                     <Form.Control 
                         type="text" 
                         name="username" 
@@ -129,7 +131,7 @@ const Register = () => {
                     />
                 </Form.Group>
                 <Form.Group controlId="password">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Password:</Form.Label>
                     <Form.Control 
                         type="password" 
                         name="password" 

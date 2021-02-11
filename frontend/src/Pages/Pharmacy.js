@@ -20,7 +20,7 @@ function Pharmacy() {
 
     useEffect(() => {
         axios 
-            .get("http://localhost:9000/pharmacies")
+            .get("http://localhost:9191/pharmacies")
             .then(res => {
                 setPharmacy(res.data)
                 setSearchPharmacy(res.data)
@@ -37,7 +37,7 @@ function Pharmacy() {
     
       const handleDelete = (id) => {
         axios
-          .delete(`http://localhost:9000/deletePharmacy/${id}`)
+          .delete(`http://localhost:9191/deletePharmacy/${id}`)
           .then(res => {        
             console.log(res.data)
           })
@@ -48,7 +48,8 @@ function Pharmacy() {
 
     return (
         <div className="pharmacy">
-            <h1>Pharmacies</h1>
+            <h1 className="title">Pharmacies</h1>
+            
             <div className="search">
                 <p>Need to find a pharmacy near you?</p>
                 <SearchPharmacy search={search} data={pharmacy} />

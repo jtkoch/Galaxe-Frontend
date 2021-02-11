@@ -39,6 +39,8 @@ const Login = () => {
     
     return (
         <div className="login-container">
+            <h1 className="title">Login</h1>
+
             <Form onSubmit={handleSubmit} className="p-5">
                 <Form.Group size="lg" controlId="username">
                     <Form.Label>Username:</Form.Label>

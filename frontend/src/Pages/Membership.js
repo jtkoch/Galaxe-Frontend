@@ -24,7 +24,7 @@ function Membership() {
 
     return (
         <div className="membership">
-            <h1>Search Member</h1>
+            <h1 className="title">Search Member</h1>
 
             <div className="search">
                 <SearchForm search={search} data={member} />

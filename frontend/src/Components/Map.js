@@ -8,7 +8,7 @@ function MapFunction() {
 
     useEffect(() => {
         axios 
-            .get("http://localhost:9000/pharmacies")
+            .get("http://localhost:9191/pharmacies")
             .then(res => {
                 setPharmacy(res.data)
                 console.log(res.data)

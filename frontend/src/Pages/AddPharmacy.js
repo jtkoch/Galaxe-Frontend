@@ -31,7 +31,7 @@ const AddPharmacy = () => {
         e.preventDefault()
         console.log("submitted", form)
         axios
-            .post("http://localhost:9000/addPharmacy", form)
+            .post("http://localhost:9191/addPharmacy", form)
             .then(response => {
                 console.log(response)
                 setForm(response.data)

@@ -22,7 +22,7 @@ const EditPharmacy = (props) => {
     let pharmacyId = props.match.params.id
 
     axios
-      .get(`http://localhost:9000/pharmacy/${pharmacyId}`)
+      .get(`http://localhost:9191/pharmacy/${pharmacyId}`)
       .then((res) => {
         setForm(res.data)
       })
@@ -44,7 +44,7 @@ const EditPharmacy = (props) => {
     event.preventDefault();
     console.log("submitted", form);
     axios
-      .put(`http://localhost:9000/updatePharmacy/${form.id}`, form)
+      .put(`http://localhost:9191/updatePharmacy/${form.id}`, form)
       .then((response) => {
         console.log(response);
         setForm(response.data);

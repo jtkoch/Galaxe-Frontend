@@ -1,0 +1,27 @@
+.home-container {
+    background-image: url("../Images/pharmacy1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+    font-weight: 600;
+
+    .title {
+        padding-top: 5%;
+        color: white;
+        text-shadow: 2px 2px black;
+    }
+
+    .welcome {
+        font-size: 1.25rem;
+        color: white;
+        text-shadow: 1px 1px black;
+    }
+
+    .mid {
+        font-size: 1.25rem;
+        padding: 15%;
+        color: white;
+        text-shadow: 2px 1px black;
+    }
+}
