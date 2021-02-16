@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Make sure your api in running on port 9000
 
 ### `To render data to the drugs table`
-Make sure your api in running on port 8080
+Make sure your api in running on port 9091
 
 ### `To render data to the pharmacy table`
 Make sure your api in running on port 9191

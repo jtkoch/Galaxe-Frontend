@@ -20,7 +20,7 @@ function Drug() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/drugs")
+      .get("http://localhost:9091/drugs")
       .then((res) => {
         setDrugs([...res.data])
         setSearchDrug(res.data)
@@ -37,7 +37,7 @@ function Drug() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8080/delete/${id}`)
+      .delete(`http://localhost:9091/delete/${id}`)
       .then(res => {        
         console.log(res.data)
       })

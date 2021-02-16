@@ -28,7 +28,7 @@ const AddDrug = () => {
         e.preventDefault()
         console.log("submitted", form)
         axios
-            .post("http://localhost:8080/adddrug", form)
+            .post("http://localhost:9091/adddrug", form)
             .then(response => {
                 console.log(response)
                 localStorage.setItem("token", response.data.token);
