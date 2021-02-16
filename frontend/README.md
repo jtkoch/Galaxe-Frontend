@@ -2,21 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Steps for starting the front end on your local server
+1. cd into frontend
+2. npm install
+3. npm start
 
-In the project directory, you can run:
 
-# RUN THE .JSON FILE BEFORE RUNNING THE APP. 
-this is because we are using port 3000 for the axios api call and the application
-can just run on port http://localhost:3001
+### `To render data to the members table`
+Make sure your api in running on port 9000
 
-### `To run the members data file`
-cd into frontend and type "json-server --watch src/members.json" in the terminal
+### `To render data to the drugs table`
+Make sure your api in running on port 8080
 
-### `To run the drugs data file`
-cd into frontend and type "json-server --watch src/drugs.json" in the terminal
-
-<<<<<<< HEAD
-### `npm start`
-cd into frontend and type npm start
-=======
+### `To render data to the pharmacy table`
+Make sure your api in running on port 9191
